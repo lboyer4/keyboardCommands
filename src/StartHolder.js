@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import './StartPage.scss';
 
 class StartPage extends Component {
-  constructor() {
-    super()
 
-  }
+  
   render() {
     return (
-    	<section>
-    		<
+    	<section className="start-holder"> 
 
     	</section
 

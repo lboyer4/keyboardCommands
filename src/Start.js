@@ -6,9 +6,14 @@ class Start extends Component {
     super()
 
   }
+
   render() {
     return (
-
+    <section className="top-page">
+    	<h1 className="title">Command Keys</h1>
+    	<form>
+    	</form>
+    </section>
   }
 }
 
