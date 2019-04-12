@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './Start.scss';
 
-class App extends Component {
+class Start extends Component {
   constructor() {
     super()
 
@@ -12,4 +12,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Start;
