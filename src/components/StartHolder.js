@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SCSS/_StartHolder.scss';
+import '../SCSS/_StartHolder.scss';
 
 class StartHolder extends Component {
 

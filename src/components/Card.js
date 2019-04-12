@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Card.scss';
+import '../SCSS/_Card.scss';
 
 class Card extends Component {
 	constructor() {
