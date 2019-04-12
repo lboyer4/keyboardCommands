@@ -11,7 +11,7 @@ class StartHolder extends Component {
     		<header>
     			<h1>Key Commands</h1>
     		</header>
-    			<Start />
+    			<Start setDifficulty={this.props.setDifficulty} />
     	</section>
     )
   }

@@ -9,10 +9,9 @@ class Start extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.parentElement.querySelector("input[type=radio]:checked"))
-    // this.props.setDifficullty(e.parent)
+    let selectedLevel = e.target.parentElement.querySelector("input[type=radio]:checked").value
+    this.props.setDifficulty(selectedLevel)
   }
-
 
   render() {
     return (
