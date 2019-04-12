@@ -1,2 +1,2 @@
 import React, { Component } from 'react';
-import './CardHolder.scss';
+import '../SCSS/_CardHolder.scss';
