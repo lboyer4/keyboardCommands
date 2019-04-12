@@ -12,7 +12,10 @@ class App extends Component {
         wrongCards: [],
         correctCards: []
     }
+  }
 
+  setDifficulty = () => {
+    
   }
 
   render() {
