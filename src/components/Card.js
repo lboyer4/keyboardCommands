@@ -10,14 +10,18 @@ class Card extends Component {
 		}
 	}
 
-	// handleAnswer = (e) => {
-	// 	e.preventDefault()
-	// 	console.log(e.target.parentElement.querySelector('.answer').value)
-	// 	let playerAnswer = e.target.parentElement.querySelector('.answer').value
-	// 	// console.log(this.props.command)
-	// }
+	handleAnswer = (e) => {
+		e.preventDefault()
+		console.log(e.target.parentElement.querySelector('.answer').value)
+		let playerAnswer = e.target.parentElement.querySelector('.answer').value
+		// if (playerAnswer === this.props.command) {		
+		// }
+		this.setState({answered: true});
+	}
+
 
   render() {
+  	let correctAnswer = this.state.answered && <h5>{this.props.command}</h5>
   	let nextCard = <button className="next" onClick={this.changeCard}>Next</button>
   	// let nextButton = (this.state.answered) ? nextCard 
     return (
@@ -25,7 +29,7 @@ class Card extends Component {
     		<form>
 	    		<h4>{this.props.task}</h4>
 	    		<input className="answer" type="text" placeholder="input answer here..." />
-	    		<h5>{this.props.command}</h5>
+	    		{correctAnswer}
 	    		<button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
 	    		{/*{nextButton}*/}
     		</form>

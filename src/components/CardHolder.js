@@ -3,8 +3,6 @@ import '../SCSS/_CardHolder.scss';
 import Card from './Card.js';
 
 function CardHolder({ level, currentCard }) { 
-	console.log(currentCard)
-	console.log(level)
 	return (
 		<section className="card-holder">
 			<h4> Level: {level} </h4>
