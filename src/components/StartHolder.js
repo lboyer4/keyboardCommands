@@ -9,7 +9,8 @@ class StartHolder extends Component {
     return (
     	<section className="top-of-page"> 
     		<header>
-    			<h1 className="title">Key Commands</h1>
+    			<h1 className="title">Compelling Key Commands</h1>
+    			<p className="descrition">Command Key Situations With These Compelling Key Commands</p>
     		</header>
     			<Start setLevel={this.props.setLevel} />
     	</section>
