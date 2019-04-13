@@ -14,14 +14,14 @@ class App extends Component {
     }
   }
 
-  setDifficulty = (selectedLevel) => {
+  setLevel = (selectedLevel) => {
     this.setState({level: selectedLevel});
   }
 
   render() {
     return (
       <div className="App">
-        <StartHolder setDifficulty={this.setDifficulty}/>
+        <StartHolder setLevel={this.setLevel}/>
       </div>
     )
   }

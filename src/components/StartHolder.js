@@ -7,11 +7,11 @@ class StartHolder extends Component {
   
   render() {
     return (
-    	<section className="start-holder"> 
+    	<section className="top-of-page"> 
     		<header>
-    			<h1>Key Commands</h1>
+    			<h1 className="title">Key Commands</h1>
     		</header>
-    			<Start setDifficulty={this.props.setDifficulty} />
+    			<Start setLevel={this.props.setLevel} />
     	</section>
     )
   }
