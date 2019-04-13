@@ -7,7 +7,7 @@ function CardHolder({ level, currentCard, setCurrentCard}) {
 		<section className="card-holder">
 			<h4> Level: {level} </h4>
 			<h6 className="instructions">
-				To Play, enter an answer in the input field, and then click "submit answer"
+				To Play, enter a command in the input field, and then click "submit answer"
 			</h6>
 			<p className="example"> Example answer: "command Z"
 			</p>

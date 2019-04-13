@@ -13,7 +13,7 @@ class Card extends Component {
 	handleAnswer = (e) => {
 		e.preventDefault()
 		let playerAnswer = e.target.parentElement.querySelector('.answer').value
-		// if (playerAnswer === this.props.command) {		
+		// if (playerAnswer.toLowerCase === this.props.command.toLowerCase) {		
 		// }
 		this.setState({answered: true});
 	}
@@ -22,7 +22,7 @@ class Card extends Component {
 		e.preventDefault()
 		this.setState({answered: false});
 		this.props.setCurrentCard();
-
+		
 	}
 
   render() {

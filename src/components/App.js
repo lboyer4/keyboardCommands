@@ -34,6 +34,9 @@ class App extends Component {
 
   setCurrentCard = () => {
     this.setState({currentCard: this.state.currentCards.shift()})
+    if (!this.state.currentCards.length) {
+      this.state.level = ''
+    }  
   }
 
 
