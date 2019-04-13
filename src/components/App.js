@@ -11,21 +11,36 @@ class App extends Component {
     this.state = {
         allCards: keyCommands || [],
         level: '',
-        practiceCards: [],
-        wrongCards: [],
-        correctCards: []
+        currentCards: [],
+        currentCard: {}
     }
   }
   
   setLevel = (selectedLevel) => {
-      this.setState({level: selectedLevel})
-     
+      this.setState({level: selectedLevel}) 
+      this.setCurrentCards(this.state.allCards, selectedLevel); 
+      this.setCurrentCard(this.state.currentCards) 
   }
+
+  setCurrentCards = (allCards, selectedLevel) => {
+    let all = this.state.allCards
+    let current = this.state.currentCards
+    return all.filter((card) => {
+      if(card['level'] === selectedLevel) {
+        this.state.currentCards.push(card)
+      }
+    })
+  }
+
+  setCurrentCard = (currentCards) => {
+    this.setState({currentCard: currentCards.shift()})
+  }
+
 
   render() {
     let startGame = <StartHolder setLevel={this.setLevel} />
     let gameBegin = <CardHolder 
-      allCards={this.state.allCards}
+      currentCard={this.state.currentCard}
       level={this.state.level}
       />
     let display = (this.state.level) ? gameBegin : startGame

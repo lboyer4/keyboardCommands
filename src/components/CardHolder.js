@@ -1,29 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../SCSS/_CardHolder.scss';
 import Card from './Card.js';
 
-function CardHolder(props) {
-	console.log(props.allCards) 
+function CardHolder({ level, currentCard }) { 
+	console.log(currentCard)
+	console.log(level)
 	return (
 		<section className="card-holder">
+			<h4> Level: {level} </h4>
 			<h6 className="instructions">
 				To Play, enter an answer in the input field, and then click "submit answer"
 			</h6>
 			<p className="example"> Example answer: "command Z"
 			</p>
-			{
-
-				props.allCards.map(command => {
-					return (
-						<Card 
-							task={command.task}
-							command={command.command}
-							level={command.level}
-							key={command.key}
-						/>
-					)
-				})
-			}
+			<Card 
+				task={currentCard.task}
+				command={currentCard.command}
+				level={currentCard.level}
+			/>
 		</section>
 	)
 }
