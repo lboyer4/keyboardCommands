@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../SCSS/_App.scss';
 import StartHolder from './StartHolder.js';
+import Cloud from '../images/Cloud-One.png';
 
 class App extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" /> 
         <StartHolder setLevel={this.setLevel}/>
       </div>
     )

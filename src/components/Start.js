@@ -18,7 +18,7 @@ class Start extends Component {
     <section className="start-holder">
     	<form>
       <p> Choose your level of difficulty to begin: </p>
-        <input type="radio" id="Beginner-level" value="Beginner" name="level" />
+        <input type="radio" defaultChecked id="Beginner-level" value="Beginner" name="level" />
           <label htmlFor="Beginner-level">Beginner</label>
         <input type="radio" id="Intermediate-level" value="Intermediate" name="level"/>
           <label htmlFor="Intermediate-level">Intermediate</label>

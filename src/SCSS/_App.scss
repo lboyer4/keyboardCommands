@@ -1,6 +1,19 @@
 .App {
   text-align: center;
   font-family: "Libre Baskerville", serif;
+  background-image: url('../images/cartoony-field.png');
+}
+
+.cloud-one {
+	  position: absolute;
+    left: -200px;
+    top: 20vh;
+	animation: animatedCloud 40s linear infinite;
+}
+
+@keyframes animatedCloud {
+	from { left: -200px; }
+	to { left: 100%; }
 }
 
 
