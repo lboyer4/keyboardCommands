@@ -5,6 +5,7 @@
   color: #F7FFF7;
 	height: 820px;
 	width: 100%;
+	overflow: hidden;
 }
 
 .cloud-one {
@@ -12,6 +13,8 @@
     left: -200px;
     top: 20vh;
 	animation: animatedCloud 40s linear infinite;
+	overflow: hidden;
+	z-index: 1;
 }
 
 @keyframes animatedCloud {
