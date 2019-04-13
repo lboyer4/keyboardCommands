@@ -4,8 +4,26 @@
 	border-radius: 7px;
 	color: #121619;
 	width: 320px;
-	height: 130px;
+	height: 190px;
 	margin: 10px auto;
 	padding: 5px;
-	z-index: 100;
+	// z-index: 1;
+}
+
+.answer-btn {
+	border-radius: 2px;
+	background-color: #F7FFF7;
+	box-shadow: .5px .5px .5px #121619;
+	display: block;
+	margin: 10px auto;
+	height: 35px;
+	width: 100px;
+	// z-index: 10;
+}
+
+.answer-btn:hover {
+	background-image: linear-gradient(red, yellow, green, blue, purple);
+	color: #F7FFF7;
+	border: 0;
+	// z-index: 10
 }

@@ -17,9 +17,10 @@ class Card extends Component {
   render() {
     return (
     	<article className="card">
-    		<h4>Question</h4>
-    		<input type="text" placeHolder="input answer here..." />
-    		<h5>Answer</h5>
+    		<h4>{this.props.task}</h4>
+    		<input type="text" placeholder="input answer here..." />
+    		<h5>{this.props.command}</h5>
+    		<button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
     	</article>
     
     )

@@ -18,26 +18,21 @@ class App extends Component {
   }
   
   setLevel = (selectedLevel) => {
-    this.setState({level: selectedLevel});
-   console.log(this.state.allCards) 
-  }
-
-  toggleGame = () => {
-    if (this.level) {
-
-    }
+      this.setState({level: selectedLevel})
+     
   }
 
   render() {
-    let startGame = <StartHolder setLevel={this.setLevel}/>
-    let gameBegin = <CardHolder />
+    let startGame = <StartHolder setLevel={this.setLevel} />
+    let gameBegin = <CardHolder 
+      allCards={this.state.allCards}
+      level={this.state.level}
+      />
+    let display = (this.state.level) ? gameBegin : startGame
 
-   let display = this.state.level ? gameBegin : startGame
     return (
       <main className="App">
         <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" /> 
-        {/*<StartHolder setLevel={this.setLevel}/>*/}
-        {/*<CardHolder />*/}
         {display}
       </main>
     )

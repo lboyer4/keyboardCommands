@@ -181,6 +181,5 @@ const keyCommands = [
 
 ];
 
-module.exports = {
-	keyCommands
-};
+module.exports = keyCommands
+;
