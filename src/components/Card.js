@@ -12,26 +12,31 @@ class Card extends Component {
 
 	handleAnswer = (e) => {
 		e.preventDefault()
-		console.log(e.target.parentElement.querySelector('.answer').value)
 		let playerAnswer = e.target.parentElement.querySelector('.answer').value
 		// if (playerAnswer === this.props.command) {		
 		// }
 		this.setState({answered: true});
 	}
 
+	handleNextCard = (e) => {
+		e.preventDefault()
+		this.setState({answered: false});
+		this.props.setCurrentCard();
+
+	}
 
   render() {
   	let correctAnswer = this.state.answered && <h5>{this.props.command}</h5>
-  	let nextCard = <button className="next" onClick={this.changeCard}>Next</button>
-  	// let nextButton = (this.state.answered) ? nextCard 
+  	let submitAnswerBtn = <button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
+  	let nextCard = <button className="next" onClick={this.handleNextCard}>Next Card</button>
+  	let button = this.state.answered ? nextCard : submitAnswerBtn 
     return (
     	<article className="card">
     		<form>
 	    		<h4>{this.props.task}</h4>
 	    		<input className="answer" type="text" placeholder="input answer here..." />
 	    		{correctAnswer}
-	    		<button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
-	    		{/*{nextButton}*/}
+	    		{button}
     		</form>
     	</article>
     

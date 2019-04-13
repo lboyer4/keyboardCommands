@@ -2,7 +2,7 @@ import React from 'react';
 import '../SCSS/_CardHolder.scss';
 import Card from './Card.js';
 
-function CardHolder({ level, currentCard }) { 
+function CardHolder({ level, currentCard, setCurrentCard}) { 
 	return (
 		<section className="card-holder">
 			<h4> Level: {level} </h4>
@@ -12,6 +12,7 @@ function CardHolder({ level, currentCard }) {
 			<p className="example"> Example answer: "command Z"
 			</p>
 			<Card 
+				setCurrentCard={setCurrentCard}
 				task={currentCard.task}
 				command={currentCard.command}
 				level={currentCard.level}

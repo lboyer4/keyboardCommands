@@ -19,7 +19,7 @@ class App extends Component {
   setLevel = (selectedLevel) => {
       this.setState({level: selectedLevel}) 
       this.setCurrentCards(this.state.allCards, selectedLevel); 
-      this.setCurrentCard(this.state.currentCards) 
+      this.setCurrentCard() 
   }
 
   setCurrentCards = (allCards, selectedLevel) => {
@@ -32,14 +32,15 @@ class App extends Component {
     })
   }
 
-  setCurrentCard = (currentCards) => {
-    this.setState({currentCard: currentCards.shift()})
+  setCurrentCard = () => {
+    this.setState({currentCard: this.state.currentCards.shift()})
   }
 
 
   render() {
     let startGame = <StartHolder setLevel={this.setLevel} />
     let gameBegin = <CardHolder 
+      setCurrentCard={this.setCurrentCard}
       currentCard={this.state.currentCard}
       level={this.state.level}
       />
