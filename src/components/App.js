@@ -48,11 +48,12 @@ class App extends Component {
       level={this.state.level}
       />
     let display = (this.state.level) ? gameBegin : startGame
-
     return (
       <main className="App">
-        <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" /> 
+        <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />
+        
         {display}
+        
       </main>
     )
   }
