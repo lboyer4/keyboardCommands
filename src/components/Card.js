@@ -23,7 +23,6 @@ class Card extends Component {
 		e.preventDefault()
 		this.setState({answered: false});
 		this.props.setCurrentCard();
-		
 	}
 
   render() {

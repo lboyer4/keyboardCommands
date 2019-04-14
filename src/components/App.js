@@ -34,16 +34,22 @@ class App extends Component {
   }
 
   setCurrentCard = () => {
-    this.setState({currentCard: this.state.currentCards.shift()})
+    this.setState({currentCard: this.state.currentCards.shift()}) 
     if (!this.state.currentCards.length) {
       this.state.level = ''
-    }  
+    } 
+    console.log(this.state)
+    this.setLocalStorage()
+    
+  }
+
+  setLocalStorage = () => {
+    localStorage.setItem(['storedState'], JSON.stringify([this.state]))
   }
 
   setIncorrectStack = () => {
     let wrongAnswers = this.state.incorrectCards
     wrongAnswers.push(this.state.currentCard)
-    console.log(wrongAnswers)
   }
 
 
