@@ -10,7 +10,7 @@ class StartHolder extends Component {
     	<section className="start-container"> 
     		<header>
     			<h1 className="title">Compelling Key Commands</h1>
-    			<p className="description">Command Key Situations With These Compelling Key Commands</p>
+    			<p className="description">Help a unicorn fly over the rainbow by practicing key Key Commands</p>
     		</header>
     			<Start setLevel={this.props.setLevel}
                        setWrongCards={this.props.setWrongCards}

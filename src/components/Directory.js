@@ -13,12 +13,19 @@ clearGame = (e) => {
 	this.props.clearAll()
 }
 
+returnStart = (e) => {
+	e.preventDefault()
+	this.props.returnStartPage()
+}
+
 	render() {
 		return (
-				<div> 
-					<h5 className="unicorn-count">Unicorns: {this.props.score} </h5>
-
+				<div className="header"> 
+					<button className="restart" onClick={this.returnStart}>Return Home</button>
+					<h5 className="unicorn-count">Unicorns Helped: {this.props.score} </h5>
 					<button className="clearAll" onClick={this.clearGame}>Reset Game</button>
+
+					
 				</div>
 
 		)

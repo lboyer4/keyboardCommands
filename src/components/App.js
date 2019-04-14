@@ -88,6 +88,12 @@ class App extends Component {
      this.setLocalStorage()
   }
 
+  returnStartPage = () => {
+    this.setState({
+      level: ''
+    })
+  }
+
 
   render() {
     // console.log(this.state.currentCards)
@@ -106,15 +112,20 @@ class App extends Component {
       level={this.state.level}
       />
 
+    let scoreBoard = <Directory 
+      score={this.state.score} 
+      clearAll={this.clearAll} 
+      returnStartPage={this.returnStartPage} 
+      />
+
     let display = (this.state.level) ? gameBegin : startGame
+
+    let header = this.state.level && scoreBoard
     return ( 
       
       <main className="App">
         <header className="header">
-          <Directory 
-            score={this.state.score} 
-            clearAll={this.clearAll}          
-            />
+          {header}
         </header>
         <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />
         
