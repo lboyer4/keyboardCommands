@@ -13,9 +13,11 @@ class Card extends Component {
 	handleAnswer = (e) => {
 		e.preventDefault()
 		let playerAnswer = e.target.parentElement.querySelector('.answer').value
-		if (playerAnswer.toLowerCase() !== this.props.command.toLowerCase()) {		
+		if (playerAnswer.toLowerCase() === this.props.command.toLowerCase()) {
+		this.props.updateScore();
+		} else {	
 		this.props.setIncorrectStack();
-		}
+		}	
 		this.setState({answered: true});
 	}
 

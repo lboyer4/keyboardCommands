@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './SCSS/_StartHolder.scss';
+// import React, { Component } from 'react';
+// import './SCSS/_StartHolder.scss';
 
-class StartHolder extends Component {
+// class StartHolder extends Component {
 
   
-  render() {
-    return (
-    	<section className="start-holder"> 
+//   render() {
+//     return (
+//     	<section className="start-holder"> 
 
-    	</section>
-    )
-  }
-}
+//     	</section>
+//     )
+//   }
+// }
 
-export default StartHolder;
+// export default StartHolder;

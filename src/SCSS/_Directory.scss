@@ -1,0 +1,27 @@
+.header {
+	display: flex;
+}
+
+.clearAll,
+.restart {
+	background-color: #D8DBE2;
+	border-radius: 20px;
+	height: 30px;
+	margin: 15px;
+}
+
+.clearAll:hover {
+		background-image: linear-gradient(red, yellow);
+		height: 35px;
+}
+
+.restart:hover {
+		background-image: linear-gradient(green, yellow);
+		height: 35px;
+}
+
+.unicorn-count {
+	color: #fff;
+	font-size: x-large;
+	font-family: Gill Sans Extrabold, sans-serif;
+}
