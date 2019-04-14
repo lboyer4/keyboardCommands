@@ -35,18 +35,33 @@ class App extends Component {
     })
   }
 
+  setWrongCards = (incorrectCards) => {
+    // this.getLocalStorage()
+    // console.log(this.state.currentCards)
+    // console.log(this.state.incorrectCards)
+    this.setState({
+      currentCard: this.state.incorrectCards.shift()
+    })
+      // this.setCurrentCard()
+      if (this.state.incorrectCards.length) {
+        this.setState({level: 'practice'})
+      }
+  }
+
   setCurrentCard = () => {
     this.setState({currentCard: this.state.currentCards.shift()}) 
     if (!this.state.currentCards.length) {
       this.state.level = ''
     } 
-    console.log(this.state)
-    this.setLocalStorage()
-    
+    this.setLocalStorage()   
   }
 
   setLocalStorage = () => {
-    localStorage.setItem(['storedState'], JSON.stringify([this.state]))
+    localStorage.setItem('storedState', JSON.stringify(this.state))
+  }
+
+  getLocalStorage = () => {
+    localStorage.getItem('storedState', JSON.stringify(this.state))
   }
 
   setIncorrectStack = () => {
@@ -58,9 +73,28 @@ class App extends Component {
     this.setState({score: this.state.score += 1})
   }
 
+  clearAll = () => {
+    this.setState({ 
+        allCards: keyCommands || [],
+        level: '',
+        currentCards: [],
+        currentCard: {},
+        incorrectCards: [],
+        score: 0
+    })
+     this.setLocalStorage()
+  }
+
 
   render() {
-    let startGame = <StartHolder setLevel={this.setLevel} />
+    console.log(this.state.currentCards)
+    console.log(this.state.incorrectCards)
+    let startGame = <StartHolder 
+      setLevel={this.setLevel}
+      setWrongCards={this.setWrongCards}
+      incorrectCards={this.state.incorrectCards}
+       />
+
     let gameBegin = <CardHolder 
       updateScore={this.updateScore}
       setCurrentCard={this.setCurrentCard}
@@ -68,13 +102,15 @@ class App extends Component {
       currentCard={this.state.currentCard}
       level={this.state.level}
       />
+
     let display = (this.state.level) ? gameBegin : startGame
     return ( 
       
       <main className="App">
         <header className="header">
           <Directory 
-            score={this.state.score}
+            score={this.state.score} 
+            clearAll={this.clearAll}          
             />
         </header>
         <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />

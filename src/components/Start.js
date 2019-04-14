@@ -13,6 +13,11 @@ class Start extends Component {
     this.props.setLevel(selectedLevel)
   }
 
+  showWrongCards = (e) => {
+    e.preventDefault()
+    this.props.setWrongCards()
+  }
+
   render() {
     return (
     <section className="start-holder">
@@ -25,6 +30,7 @@ class Start extends Component {
         <input type="radio" id="Advanced-level" value="Advanced" name="level"/>
           <label htmlFor="Advanced-level">Advanced</label>
         <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
+        <button className="wrong-cards" onClick={this.showWrongCards}>Practice These</button>
     	</form>
     </section>
     )

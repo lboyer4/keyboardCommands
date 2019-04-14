@@ -5,17 +5,20 @@ class Directory extends Component {
 	constructor() {
 		super()
 		this.state= {
-			score: 0,
-			wrongCards: 0
 		}
 	}
+
+clearGame = (e) => {
+	e.preventDefault()
+	this.props.clearAll()
+}
 
 	render() {
 		return (
 				<div> 
-					<h5>Unicorns Saved: {this.props.score} </h5>
+					<h5 className="unicorn-count">Unicorns: {this.props.score} </h5>
 
-
+					<button className="clearAll" onClick={this.clearGame}>Reset Game</button>
 				</div>
 
 		)
