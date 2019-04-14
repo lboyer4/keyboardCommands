@@ -12,7 +12,8 @@ class App extends Component {
         allCards: keyCommands || [],
         level: '',
         currentCards: [],
-        currentCard: {}
+        currentCard: {},
+        incorrectCards: []
     }
   }
   
@@ -39,11 +40,18 @@ class App extends Component {
     }  
   }
 
+  setIncorrectStack = () => {
+    let wrongAnswers = this.state.incorrectCards
+    wrongAnswers.push(this.state.currentCard)
+    console.log(wrongAnswers)
+  }
+
 
   render() {
     let startGame = <StartHolder setLevel={this.setLevel} />
     let gameBegin = <CardHolder 
       setCurrentCard={this.setCurrentCard}
+      setIncorrectStack={this.setIncorrectStack}
       currentCard={this.state.currentCard}
       level={this.state.level}
       />

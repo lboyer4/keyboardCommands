@@ -2,19 +2,19 @@
   text-align: center;
   font-family: "Libre Baskerville", serif;
   background-image: url('../images/cartoony-field.png');
-  color: #F7FFF7;
+  color: #2B2D42;
 	height: 820px;
 	width: 100%;
 	overflow: hidden;
 }
 
 .cloud-one {
-	  position: relative;
-    left: -200px;
-    top: 10vh;
-	animation: animatedCloud 60s linear infinite;
+  position: relative;
+  left: -200px;
+  top: 10vh;
+	animation: animatedCloud 40s linear infinite;
 	overflow: hidden;
-	z-index: 1;
+	z-index: 2;
 }
 
 @keyframes animatedCloud {

@@ -2,7 +2,7 @@ import React from 'react';
 import '../SCSS/_CardHolder.scss';
 import Card from './Card.js';
 import Rainbow from '../images/rainbow.png';
-function CardHolder({ level, currentCard, setCurrentCard}) { 
+function CardHolder({ level, currentCard, setCurrentCard, setIncorrectStack}) { 
 	return (
 		<section className="card-holder">
 			<img className="rainbow" src={Rainbow} alt="magical rainbow" />
@@ -14,6 +14,7 @@ function CardHolder({ level, currentCard, setCurrentCard}) {
 				<p className="example"> Example answer: "command Z"
 				</p>
 				<Card 
+					setIncorrectStack={setIncorrectStack}
 					setCurrentCard={setCurrentCard}
 					task={currentCard.task}
 					command={currentCard.command}
