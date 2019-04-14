@@ -10,7 +10,7 @@
 
 .cloud-one {
   position: relative;
-  left: -200px;
+  left: -400px;
   top: 10vh;
 	animation: animatedCloud 40s linear infinite;
 	overflow: hidden;
@@ -22,5 +22,11 @@
 	to { left: 100%; }
 }
 
-
+.header {
+	background-color: #72788D;
+	height: 20px;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
+}
 

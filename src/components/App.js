@@ -3,7 +3,8 @@ import '../SCSS/_App.scss';
 import StartHolder from './StartHolder.js';
 import Cloud from '../images/Cloud-One.png';
 import keyCommands from '../key-command-data.js';
-import CardHolder from './CardHolder.js'
+import CardHolder from './CardHolder.js';
+import Directory from './Directory.js';
 
 class App extends Component {
   constructor() {
@@ -13,7 +14,8 @@ class App extends Component {
         level: '',
         currentCards: [],
         currentCard: {},
-        incorrectCards: []
+        incorrectCards: [],
+        score: 0
     }
   }
   
@@ -62,8 +64,12 @@ class App extends Component {
       level={this.state.level}
       />
     let display = (this.state.level) ? gameBegin : startGame
-    return (
+    return ( 
+      
       <main className="App">
+        <header className="header">
+          <Directory />
+        </header>
         <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />
         
         {display}
