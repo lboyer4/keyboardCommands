@@ -1,1 +1,38 @@
+.card {
+	background-color: #72788D;
+	box-shadow: 1px 1px 1px #121619;
+	border-radius: 7px;
+	color: #121619;
+	width: 320px;
+	height: 190px;
+	margin: 10px auto;
+	padding: 5px;
+}
+
+.answer-btn,
+.next
+ {
+	border-radius: 20px;
+	background-color: #D8DBE2;
+	box-shadow: .5px .5px .5px #121619;
+	display: block;
+	margin: 40px auto;
+	height: 35px;
+	width: 100px;
+}
+
+.next {
+	margin: 5px auto;
+}
+
+h5 {
+	margin: 10px auto 13px;
+}
+
+.answer-btn:hover,
+.next:hover {
+	background-image: linear-gradient(red, yellow, green, blue, purple);
+	color: #D8DBE2;
+	border: 0;
+}
 

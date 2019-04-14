@@ -7,7 +7,7 @@ class StartHolder extends Component {
   
   render() {
     return (
-    	<section className="top-of-page"> 
+    	<section className="start-container"> 
     		<header>
     			<h1 className="title">Compelling Key Commands</h1>
     			<p className="description">Command Key Situations With These Compelling Key Commands</p>
