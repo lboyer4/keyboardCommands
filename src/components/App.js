@@ -120,7 +120,7 @@ class App extends Component {
 
     let display = (this.state.level) ? gameBegin : startGame
 
-    let header = this.state.level && scoreBoard
+    let header = this.state.score && scoreBoard
     return ( 
       
       <main className="App">
