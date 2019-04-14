@@ -73,7 +73,9 @@ class App extends Component {
       
       <main className="App">
         <header className="header">
-          <Directory />
+          <Directory 
+            score={this.state.score}
+            />
         </header>
         <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />
         

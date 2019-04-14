@@ -13,8 +13,8 @@ class Directory extends Component {
 	render() {
 		return (
 				<div> 
-					<h5>Unicorns Saved: 0 </h5>
-					
+					<h5>Unicorns Saved: {this.props.score} </h5>
+
 
 				</div>
 
