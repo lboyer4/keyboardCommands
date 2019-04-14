@@ -54,10 +54,15 @@ class App extends Component {
     wrongAnswers.push(this.state.currentCard)
   }
 
+  updateScore = () => {
+    this.setState({score: this.state.score += 1})
+  }
+
 
   render() {
     let startGame = <StartHolder setLevel={this.setLevel} />
     let gameBegin = <CardHolder 
+      updateScore={this.updateScore}
       setCurrentCard={this.setCurrentCard}
       setIncorrectStack={this.setIncorrectStack}
       currentCard={this.state.currentCard}

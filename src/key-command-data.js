@@ -7,7 +7,7 @@ const keyCommands = [
 
 	{
 		"task": "Paste",
-		"command": "command P",
+		"command": "command V",
 		"level": "Beginner"
 	},
 
@@ -28,7 +28,7 @@ const keyCommands = [
 		"command": "command A",
 		"level": "Beginner"
 	},
-
+	
 	{
 		"task": "Quit current application",
 		"command": "command Q",
