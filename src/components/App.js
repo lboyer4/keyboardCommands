@@ -36,23 +36,26 @@ class App extends Component {
   }
 
   setWrongCards = (incorrectCards) => {
-    // this.getLocalStorage()
-    // console.log(this.state.currentCards)
-    // console.log(this.state.incorrectCards)
+    console.log(this.state)
+    JSON.parse(localStorage.getItem('storedState'))
+    console.log('storedState')
     this.setState({
       currentCard: this.state.incorrectCards.shift()
     })
-      // this.setCurrentCard()
       if (this.state.incorrectCards.length) {
-        this.setState({level: 'practice'})
+        this.setState({level: 'Practice'})
       }
   }
 
   setCurrentCard = () => {
+    if (this.state.level === 'Practice' && this.state.incorrectCards.length) {
+      this.setWrongCards();
+    } else {
     this.setState({currentCard: this.state.currentCards.shift()}) 
     if (!this.state.currentCards.length) {
       this.state.level = ''
     } 
+  }
     this.setLocalStorage()   
   }
 
@@ -60,9 +63,9 @@ class App extends Component {
     localStorage.setItem('storedState', JSON.stringify(this.state))
   }
 
-  getLocalStorage = () => {
-    localStorage.getItem('storedState', JSON.stringify(this.state))
-  }
+  // getLocalStorage = () => {
+  //   localStorage.getItem('storedState', JSON.stringify(this.state))
+  // }
 
   setIncorrectStack = () => {
     let wrongAnswers = this.state.incorrectCards
@@ -87,8 +90,8 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.currentCards)
-    console.log(this.state.incorrectCards)
+    // console.log(this.state.currentCards)
+    // console.log(this.state.incorrectCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
       setWrongCards={this.setWrongCards}
