@@ -20,8 +20,10 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    if (!localStorage.getItem("storedState") === null) {
-      this.setState(this.getLocalStorage());
+console.log(!(localStorage.getItem("storedState") === null))
+    if (!(localStorage.getItem("storedState") === null)) {
+      console.log('test')
+      this.setState(this.getLocalStorage("storedState"));
     }
   }
   
@@ -100,7 +102,8 @@ class App extends Component {
 
 
   render() {
-    // console.log(this.state.currentCards)
+
+    console.log(this.state)
     // console.log(this.state.incorrectCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
