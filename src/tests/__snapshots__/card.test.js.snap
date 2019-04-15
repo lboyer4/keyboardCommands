@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshot 1`] = `
+<article
+  className="card"
+>
+  <form>
+    <h4>
+      Save
+    </h4>
+    <input
+      className="answer"
+      placeholder="input answer here..."
+      type="text"
+    />
+    <button
+      className="answer-btn"
+      onClick={[Function]}
+    >
+      Submit Answer
+    </button>
+  </form>
+</article>
+`;

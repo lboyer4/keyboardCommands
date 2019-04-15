@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Start should match snap shot 1`] = `
+<section
+  className="start-holder"
+>
+  <form>
+    <p>
+       To Begin, choose your level of diffuclty, or practice cards you've previously gotten incorrect
+    </p>
+    <input
+      defaultChecked={true}
+      id="Beginner-level"
+      name="level"
+      type="radio"
+      value="Beginner"
+    />
+    <label
+      htmlFor="Beginner-level"
+    >
+      Beginner
+    </label>
+    <input
+      id="Intermediate-level"
+      name="level"
+      type="radio"
+      value="Intermediate"
+    />
+    <label
+      htmlFor="Intermediate-level"
+    >
+      Intermediate
+    </label>
+    <input
+      id="Advanced-level"
+      name="level"
+      type="radio"
+      value="Advanced"
+    />
+    <label
+      htmlFor="Advanced-level"
+    >
+      Advanced
+    </label>
+    <div
+      className="btn-container"
+    >
+      <button
+        className="choose-level-btn"
+        onClick={[Function]}
+      >
+        Begin Game
+      </button>
+      <button
+        className="wrong-cards-btn"
+        onClick={[Function]}
+      >
+        Practice Cards
+      </button>
+    </div>
+  </form>
+</section>
+`;

@@ -27,4 +27,6 @@ describe("App", () => {
 			expect(wrapper.state().level).toEqual('Advanced');
 		});
 	});
+
+	
 });

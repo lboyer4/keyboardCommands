@@ -2,6 +2,7 @@ import React from 'react';
 import '../SCSS/_CardHolder.scss';
 import Card from './Card.js';
 import Rainbow from '../images/rainbow.png';
+
 function CardHolder({ level, currentCard, setCurrentCard, setIncorrectStack, updateScore, setWrongCards, incorrectCards}) { 
 	return (
 		<section className="card-holder">
