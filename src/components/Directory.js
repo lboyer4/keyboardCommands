@@ -22,10 +22,8 @@ returnStart = (e) => {
 		return (
 				<div className="header"> 
 					<button className="restart" onClick={this.returnStart}>Return Home</button>
-					<h5 className="unicorn-count">Unicorns Helped: {this.props.score} </h5>
+						<h5 className="unicorn-count">Unicorns Helped: {this.props.score} </h5>
 					<button className="clearAll" onClick={this.clearGame}>Reset Game</button>
-
-					
 				</div>
 
 		)
