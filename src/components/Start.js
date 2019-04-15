@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import '../SCSS/_Start.scss';
 
 class Start extends Component {
-  constructor() {
-    super()
 
-  }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    let selectedLevel = e.target.parentElement.querySelector("input[type=radio]:checked").value
+    let selectedLevel = e.target.parentElement.parentElement.querySelector("input[type=radio]:checked").value
     this.props.setLevel(selectedLevel)
   }
 
@@ -29,8 +26,10 @@ class Start extends Component {
           <label htmlFor="Intermediate-level">Intermediate</label>
         <input type="radio" id="Advanced-level" value="Advanced" name="level"/>
           <label htmlFor="Advanced-level">Advanced</label>
-        <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
-        <button className="wrong-cards" onClick={this.showWrongCards}>Practice These</button>
+        <div>
+          <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
+          <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice These</button>
+        </div>
     	</form>
     </section>
     )
