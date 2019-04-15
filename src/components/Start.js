@@ -26,7 +26,7 @@ class Start extends Component {
           <label htmlFor="Intermediate-level">Intermediate</label>
         <input type="radio" id="Advanced-level" value="Advanced" name="level"/>
           <label htmlFor="Advanced-level">Advanced</label>
-        <div>
+        <div className="btn-container">
           <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
           <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice These</button>
         </div>

@@ -20,9 +20,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-console.log(!(localStorage.getItem("storedState") === null))
     if (!(localStorage.getItem("storedState") === null)) {
-      console.log('test')
       this.setState(this.getLocalStorage("storedState"));
     }
   }
@@ -35,7 +33,6 @@ console.log(!(localStorage.getItem("storedState") === null))
 
   setCurrentCards = (allCards, selectedLevel) => {
     let all = this.state.allCards
-    let current = this.state.currentCards
     return all.filter((card) => {
       if(card['level'] === selectedLevel) {
         this.state.currentCards.push(card)
@@ -57,17 +54,16 @@ console.log(!(localStorage.getItem("storedState") === null))
       this.setWrongCards();
     } else {
     this.setState({currentCard: this.state.currentCards.shift()}) 
-    if (!this.state.currentCards.length) {
-      this.state.level = ''
-    } 
-  }
+      if (!this.state.currentCards.length) {
+        this.setState({level: ''})
+      } 
+    }
     this.setLocalStorage()   
   }
 
   setLocalStorage = () => {
     localStorage.setItem('storedState', JSON.stringify(this.state))
   }
-
 
   getLocalStorage = () => {
     return JSON.parse(localStorage.getItem('storedState'))
@@ -100,11 +96,7 @@ console.log(!(localStorage.getItem("storedState") === null))
     })
   }
 
-
   render() {
-
-    console.log(this.state)
-    // console.log(this.state.incorrectCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
       setWrongCards={this.setWrongCards}
@@ -126,19 +118,15 @@ console.log(!(localStorage.getItem("storedState") === null))
       <main className="App">
         <header className="header">
                <Directory 
-      score={this.state.score} 
-      clearAll={this.clearAll} 
-      returnStartPage={this.returnStartPage} 
-      incorrectCards={this.state.incorrectCards}
-
-
-      />
+                score={this.state.score} 
+                clearAll={this.clearAll} 
+                returnStartPage={this.returnStartPage} 
+                incorrectCards={this.state.incorrectCards}
+                />
         </header>
-        <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" />
-        
-        {display}
-        
-      </main>
+        <img className="cloud-one" src={Cloud} width="200px" alt="beautiful magic cloud" /> 
+        {display}       
+    </main>
     )
   }
 }
