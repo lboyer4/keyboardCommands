@@ -27,7 +27,7 @@ class Start extends Component {
         <input type="radio" id="Advanced-level" value="Advanced" name="level"/>
           <label htmlFor="Advanced-level">Advanced</label>
         <div className="btn-container">
-          <button className="choose-level-btn" onClick={this.handleSubmit}>Begin Game</button>
+          <button className="choose-level-btn" onClick={this.handleSubmit}>BEGIN GAME</button>
           <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice Cards</button>
         </div>
     	</form>

@@ -16,17 +16,23 @@
 	display: flex;
 }
 
+
 .choose-level-btn,
 .wrong-cards-btn {
 	border-radius: 20px;
 	background-color: #72788D;
 	box-shadow: 0 0 1px #121619;
 	color: #F7FFF7;
+	font-weight: bold;
 	margin: 15px auto;
 	height: 35px;
 	width: 100px;
 }
 
+.choose-level-btn {
+	background-color: #4BCC1C;
+
+}
 
 .choose-level-btn:hover,
 .wrong-cards-btn:hover {
