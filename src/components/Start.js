@@ -19,7 +19,7 @@ class Start extends Component {
     return (
     <section className="start-holder">
     	<form>
-      <p> Choose your level of difficulty to begin: </p>
+      <p> To Begin, choose your level of diffuclty, or practice cards you've previously gotten incorrect</p>
         <input type="radio" defaultChecked id="Beginner-level" value="Beginner" name="level" />
           <label htmlFor="Beginner-level">Beginner</label>
         <input type="radio" id="Intermediate-level" value="Intermediate" name="level"/>
@@ -28,7 +28,7 @@ class Start extends Component {
           <label htmlFor="Advanced-level">Advanced</label>
         <div className="btn-container">
           <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
-          <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice These</button>
+          <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice Cards</button>
         </div>
     	</form>
     </section>
