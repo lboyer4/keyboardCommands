@@ -8,13 +8,13 @@ class Directory extends Component {
 		}
 	}
 
-clearGame = (e) => {
-	e.preventDefault()
+clearGame = () => {
+	// e.preventDefault()
 	this.props.clearAll()
 }
 
-returnStart = (e) => {
-	e.preventDefault()
+returnStart = () => {
+	// e.preventDefault()
 	this.props.returnStartPage()
 }
 

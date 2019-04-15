@@ -26,9 +26,9 @@ class App extends Component {
   }
   
   setLevel = (selectedLevel) => {
-      this.setState({level: selectedLevel}) 
-      this.setCurrentCards(this.state.allCards, selectedLevel); 
-      this.setCurrentCard() 
+    this.setState({level: selectedLevel}) 
+    this.setCurrentCards(this.state.allCards, selectedLevel); 
+    this.setCurrentCard() 
   }
 
   setCurrentCards = (allCards, selectedLevel) => {

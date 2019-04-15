@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Directory should match snap shot 1`] = `
+<div
+  className="header"
+>
+  <button
+    className="restart"
+    onClick={[Function]}
+  >
+    Return Home
+  </button>
+  <h5
+    className="unicorn-count"
+  >
+    Unicorns Helped: 
+    0
+     
+  </h5>
+  <button
+    className="clearAll"
+    onClick={[Function]}
+  >
+    Reset Game
+  </button>
+</div>
+`;

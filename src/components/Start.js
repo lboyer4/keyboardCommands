@@ -5,13 +5,13 @@ class Start extends Component {
 
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     let selectedLevel = e.target.parentElement.parentElement.querySelector("input[type=radio]:checked").value
     this.props.setLevel(selectedLevel)
   }
 
-  showWrongCards = (e) => {
-    e.preventDefault()
+  showWrongCards = () => {
+    // e.preventDefault()
     this.props.setWrongCards()
   }
 
@@ -27,7 +27,7 @@ class Start extends Component {
         <input type="radio" id="Advanced-level" value="Advanced" name="level"/>
           <label htmlFor="Advanced-level">Advanced</label>
         <div className="btn-container">
-          <button className="choose-level-btn" onClick={this.handleSubmit}>Choose Your Difficulty</button>
+          <button className="choose-level-btn" onClick={this.handleSubmit}>Begin Game</button>
           <button className="wrong-cards-btn" onClick={this.showWrongCards}>Practice Cards</button>
         </div>
     	</form>

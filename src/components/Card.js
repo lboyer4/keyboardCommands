@@ -6,7 +6,7 @@ class Card extends Component {
 		super()
 		this.state = {
 			answered: false,
-			nextCard: false,
+			// nextCard: false,
 		}
 	}
 
