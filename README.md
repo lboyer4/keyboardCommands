@@ -1,10 +1,7 @@
-## Available Scripts
-
-In the project directory, you can run:
-
 ### Description
 
-This project was built to give for the user to be able to practice keyboard shortcuts by using flashcards to prompt the user. 
+This project is built to give the user a way to practice keyboard shortcut commands by being prompeted with flashcards.
+The incorrect cards are then saved to local storage for the user to practice at a later time. 
 
 ### Installation
 
@@ -15,8 +12,12 @@ next, `run npm install`
 
 ### Screenshots
 
-![image of projects starting screen](./src/images/screenshot1.png)
+![image of project's starting screen](./src/images/screenshot1.png)
+
+![image of project's flashcard screen](./src/images/screenshot2.png)
 
 ### Learning Goals
 
 The main goal of this project was to create a functioning flashcard app using React and TDD.
+
+Other learning goals included writing DRY code, using local stroage, and fetching an API
