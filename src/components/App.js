@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../SCSS/_App.scss';
 import StartHolder from './StartHolder.js';
 import Cloud from '../images/Cloud-One.png';
-import keyCommands from '../key-command-data.js';
+// import keyCommands from '../key-command-data.js';
 import CardHolder from './CardHolder.js';
 import Directory from './Directory.js';
 
@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-        allCards: keyCommands || [],
+        allCards: [],
         level: '',
         currentCards: [],
         currentCard: {},
@@ -23,6 +23,15 @@ class App extends Component {
     if (!(localStorage.getItem("storedState") === null)) {
       this.setState(this.getLocalStorage("storedState"));
     }
+    fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/lboyer-data/keyCommands')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.setState({
+          allCards: data.keyCommands
+        })
+      })
+      .catch(error => {throw new Error(error)})  
   }
   
   setLevel = (selectedLevel) => {
@@ -32,7 +41,7 @@ class App extends Component {
   }
 
   setCurrentCards = (allCards, selectedLevel) => {
-    let all = this.state.allCards
+    let all = allCards
     return all.filter((card) => {
       if(card['level'] === selectedLevel) {
         this.state.currentCards.push(card)
@@ -80,14 +89,14 @@ class App extends Component {
 
   clearAll = () => {
     this.setState({ 
-        allCards: keyCommands || [],
+        allCards: [],
         level: '',
         currentCards: [],
         currentCard: {},
         incorrectCards: [],
         score: 0
     })
-    localStorage.clear()
+    localStorage.clear() 
   }
 
   returnStartPage = () => {
@@ -97,6 +106,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.allCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
       setWrongCards={this.setWrongCards}

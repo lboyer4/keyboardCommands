@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 
 describe("Card", () => {
 	let wrapper;
-	let wrapper2;
 
 
 	const mocksetIncorrectStack = jest.fn();
@@ -32,11 +31,24 @@ describe("Card", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	 it('should call the next card when clicked', () => {
-	 	wrapper.state().answered=true;
-    wrapper.find('.next').simulate('click');
-    expect(mockhandleNextCard).toBeCalled();
-  });
+
+	it('should compare answers when clicked', () => {
+		wrapper.state().answered=false;
+		wrapper.find('.answer-btn').simulate('click');
+		expect(wrapper.state().answered).toEqual(true);
+	})
+
+	// it('should call updateScores on submit', () => {
+ //    wrapper.find('.answer-btn').simulate('click', { preventDefault: () => {}
+ //  });
+ //  //   const wrapperTwo = mount(<Card />);
+	// 	// expect(wrapperTwo.find('.answer').parents()).toEqual('command');
+ //    expect(mockUpdateScore).toBeCalled();
+ //  });	
+
+	 // it('should return answered to false when called', () => {
+
+  // });
 
 	 // it('set the wrong cards when clicked', () => {
 	 // 	wrapper.find('.wrong-cards-btn').simulate('click');
