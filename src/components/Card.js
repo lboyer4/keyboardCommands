@@ -11,7 +11,7 @@ class Card extends Component {
 	}
 
 	handleAnswer = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		let playerAnswer = e.target.parentElement.querySelector('.answer').value
 		if (playerAnswer.toLowerCase() === this.props.command.toLowerCase()) {
 		this.props.updateScore();
@@ -22,7 +22,7 @@ class Card extends Component {
 	}
 
 	handleNextCard = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		this.setState({answered: false});
 		this.props.setCurrentCard();
 	}
@@ -32,14 +32,11 @@ class Card extends Component {
   	let submitAnswerBtn = <button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
   	let nextCard = <button className="next" onClick={this.handleNextCard}>Next Card</button>
   	let button = this.state.answered ? nextCard : submitAnswerBtn 
-  	// let input = <input className="answer" type="text" placeholder="input answer here..." />
-  	// let showInput = submitAnswerBtn && input 
     return (
     	<article className="card">
     		<form>
 	    		<h4>{this.props.task}</h4>
 	    		<input className="answer" type="text" placeholder="input answer here..." />
-	    		{/*{showInput}*/}
 	    		{correctAnswer}
 	    		{button}
     		</form>

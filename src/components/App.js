@@ -31,7 +31,7 @@ class App extends Component {
           allCards: data.keyCommands
         })
       })
-      .catch(error => {throw new Error(error)})  
+      .catch(error => {throw new Error(error)}); 
   }
   
   setLevel = (selectedLevel) => {
@@ -44,47 +44,47 @@ class App extends Component {
     let all = allCards
     return all.filter((card) => {
       if(card['level'] === selectedLevel) {
-        this.state.currentCards.push(card)
+        this.state.currentCards.push(card);
       }
-    })
+    });
   }
 
   setWrongCards = (incorrectCards) => {
     this.setState({
       currentCard: this.state.incorrectCards.shift()
-    })
-      if (this.state.incorrectCards.length) {
-        this.setState({level: 'Practice'})
-      }
+    });
+    if (this.state.incorrectCards.length) {
+      this.setState({level: 'Practice'});
+    }
   }
 
   setCurrentCard = () => {
     if (this.state.level === 'Practice' && this.state.incorrectCards.length) {
       this.setWrongCards();
     } else {
-    this.setState({currentCard: this.state.currentCards.shift()}) 
+      this.setState({currentCard: this.state.currentCards.shift()}) 
       if (!this.state.currentCards.length) {
-        this.setState({level: ''})
+        this.setState({level: ''});
       } 
     }
-    this.setLocalStorage()   
+    this.setLocalStorage();  
   }
 
   setLocalStorage = () => {
-    localStorage.setItem('storedState', JSON.stringify(this.state))
+    localStorage.setItem('storedState', JSON.stringify(this.state));
   }
 
   getLocalStorage = () => {
-    return JSON.parse(localStorage.getItem('storedState'))
+    return JSON.parse(localStorage.getItem('storedState'));
   }
 
   setIncorrectStack = () => {
-    let wrongAnswers = this.state.incorrectCards
-    wrongAnswers.push(this.state.currentCard)
+    let wrongAnswers = this.state.incorrectCards;
+    wrongAnswers.push(this.state.currentCard);
   }
 
   updateScore = () => {
-    this.setState({score: this.state.score += 1})
+    this.setState({score: this.state.score += 1});
   }
 
   clearAll = () => {
@@ -95,14 +95,14 @@ class App extends Component {
         currentCard: {},
         incorrectCards: [],
         score: 0
-    })
-    localStorage.clear() 
+    });
+    localStorage.clear();
   }
 
   returnStartPage = () => {
     this.setState({
       level: ''
-    })
+    });
   }
 
   render() {
@@ -121,7 +121,7 @@ class App extends Component {
       level={this.state.level}
       />
 
-    let display = (this.state.level) ? gameBegin : startGame
+    let display = (this.state.level) ? gameBegin : startGame;
       
     return ( 
       

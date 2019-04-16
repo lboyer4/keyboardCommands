@@ -9,9 +9,10 @@ function CardHolder({ level, currentCard, setCurrentCard, setIncorrectStack, upd
 			<img className="rainbow" src={Rainbow} alt="magical rainbow" />
 			<div className="cards">
 				<h4> Level: {level} </h4>
-				<h6 className="instructions">
-					To Play, enter a command in the input field, and then click "submit answer"
-				</h6>
+				<h5 className="instructions">
+					To Play, enter a command in the input field, and then click "submit answer".
+				</h5>
+				<h5> Check your answer and then click "next card".</h5>
 				<p className="example"> Example answer: "command Z"
 				</p>
 				<Card 

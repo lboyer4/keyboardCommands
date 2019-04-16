@@ -9,13 +9,11 @@ class Directory extends Component {
 	}
 
 clearGame = () => {
-	// e.preventDefault()
-	this.props.clearAll()
+	this.props.clearAll();
 }
 
 returnStart = () => {
-	// e.preventDefault()
-	this.props.returnStartPage()
+	this.props.returnStartPage();
 }
 
 	render() {
