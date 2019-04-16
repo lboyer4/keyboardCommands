@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Card from '../components/Card';
 import { shallow } from 'enzyme'; 
 
@@ -32,11 +31,11 @@ describe("Card", () => {
 	});
 
 
-	it('should compare answers when clicked', () => {
-		wrapper.state().answered=false;
-		wrapper.find('.answer-btn').simulate('click');
-		expect(wrapper.state().answered).toEqual(true);
-	})
+	// it('should compare answers when clicked', () => {
+	// 	wrapper.state().answered=false;
+	// 	wrapper.find('.answer-btn').simulate('click');
+	// 	expect(wrapper.state().answered).toEqual(true);
+	// })
 
 	// it('should call updateScores on submit', () => {
  //    wrapper.find('.answer-btn').simulate('click', { preventDefault: () => {}

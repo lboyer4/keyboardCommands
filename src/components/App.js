@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../SCSS/_App.scss';
 import StartHolder from './StartHolder.js';
 import Cloud from '../images/Cloud-One.png';
-// import keyCommands from '../key-command-data.js';
 import CardHolder from './CardHolder.js';
 import Directory from './Directory.js';
 
@@ -26,7 +25,6 @@ class App extends Component {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/lboyer-data/keyCommands')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.setState({
           allCards: data.keyCommands
         })
@@ -79,8 +77,7 @@ class App extends Component {
   }
 
   setIncorrectStack = () => {
-    let wrongAnswers = this.state.incorrectCards;
-    wrongAnswers.push(this.state.currentCard);
+    this.state.incorrectCards.push(this.state.currentCard);
   }
 
   updateScore = () => {
@@ -106,7 +103,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.allCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
       setWrongCards={this.setWrongCards}

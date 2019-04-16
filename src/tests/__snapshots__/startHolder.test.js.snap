@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartHolder should match the snapshot with all data passed in 1`] = `
+<section
+  className="start-container"
+>
+  <header>
+    <h1
+      className="title"
+    >
+      Compelling Key Commands
+    </h1>
+    <p
+      className="description"
+    >
+      Help a unicorn fly over the rainbow by practicing key Key Commands
+    </p>
+  </header>
+  <Start
+    incorrectCards={
+      Array [
+        Object {
+          "test": "test one",
+        },
+        Object {
+          "test": "test two",
+        },
+      ]
+    }
+    setLevel={[MockFunction]}
+    setWrongCards={[MockFunction]}
+  />
+</section>
+`;

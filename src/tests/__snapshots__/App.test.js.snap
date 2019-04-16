@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with all data passed in 1`] = `
+<main
+  className="App"
+>
+  <header
+    className="header"
+  >
+    <Directory
+      clearAll={[Function]}
+      incorrectCards={Array []}
+      returnStartPage={[Function]}
+      score={0}
+    />
+  </header>
+  <img
+    alt="beautiful magic cloud"
+    className="cloud-one"
+    src="Cloud-One.png"
+    width="200px"
+  />
+  <StartHolder
+    incorrectCards={Array []}
+    setLevel={[Function]}
+    setWrongCards={[Function]}
+  />
+</main>
+`;
