@@ -49,7 +49,7 @@ exports[`Start should match snap shot 1`] = `
         className="choose-level-btn"
         onClick={[Function]}
       >
-        Begin Game
+        BEGIN GAME
       </button>
       <button
         className="wrong-cards-btn"
