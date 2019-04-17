@@ -6,7 +6,6 @@ class Card extends Component {
 		super()
 		this.state = {
 			answered: false,
-			// nextCard: false,
 		}
 	}
 
@@ -31,7 +30,7 @@ class Card extends Component {
   	let correctAnswer = this.state.answered && <h5>{this.props.command}</h5>
   	let submitAnswerBtn = <button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
   	let nextCard = <button className="next" onClick={this.handleNextCard}>Next Card</button>
-  	let button = this.state.answered ? nextCard : submitAnswerBtn 
+  	let button = this.state.answered ? nextCard : submitAnswerBtn;
     return (
     	<article className="card">
     		<form>

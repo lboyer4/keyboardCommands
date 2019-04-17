@@ -23,11 +23,6 @@ describe("Start", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	 // it('should clear all when button is pushed', () => {
-  //   wrapper.find('.choose-level-btn').simulate('click', {target: {}});
-  //   expect(mocksetLevel).toBeCalled();
-  // });
-
 	 it('set the wrong cards when clicked', () => {
 	 	wrapper.find('.wrong-cards-btn').simulate('click');
 	 	expect(mocksetWrongCards).toBeCalled();
