@@ -1,10 +1,12 @@
+@import'./_variables.scss';
+
 .header {
 	display: flex;
 }
 
 .clearAll,
 .restart {
-	background-color: #D8DBE2;
+	background-color: $light-color;
 	border-radius: 20px;
 	font-weight: bold;
 	height: 30px;
@@ -22,7 +24,7 @@
 }
 
 .unicorn-count {
-	color: #fff;
+	color: $card-font;
 	font-size: x-large;
 	font-family: Gill Sans Extrabold, sans-serif;
 }
