@@ -5,13 +5,11 @@ class Start extends Component {
 
 
   handleSubmit = (e) => {
-    // e.preventDefault()
     let selectedLevel = e.target.parentElement.parentElement.querySelector("input[type=radio]:checked").value
     this.props.setLevel(selectedLevel)
   }
 
   showWrongCards = () => {
-    // e.preventDefault()
     this.props.setWrongCards()
   }
 

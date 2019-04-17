@@ -38,10 +38,9 @@ class App extends Component {
     this.setCurrentCard() 
   }
 
-  setCurrentCards = (allCards, selectedLevel) => {
-    let all = allCards
-    return all.filter((card) => {
-      if(card['level'] === selectedLevel) {
+  setCurrentCards = (allCards, selectedLevel) => {  
+    allCards.forEach((card) => {
+      if(card.level === selectedLevel) {
         this.state.currentCards.push(card);
       }
     });
@@ -60,7 +59,7 @@ class App extends Component {
     if (this.state.level === 'Practice' && this.state.incorrectCards.length) {
       this.setWrongCards();
     } else {
-      this.setState({currentCard: this.state.currentCards.shift()}) 
+      this.setState({currentCard: this.state.currentCards.shift()});
       if (!this.state.currentCards.length) {
         this.setState({level: ''});
       } 

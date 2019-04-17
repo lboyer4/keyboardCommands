@@ -63,8 +63,60 @@ describe('App', () => {
   		expect(wrapper.state().incorrectCards).toEqual([]);
   		wrapper.instance().setIncorrectStack();
   		expect(wrapper.state().incorrectCards).toEqual([{test: 'one'}]);
-  	})
-  })
+  	});
+  });
+
+  describe("Set current cards", () => {
+  	it("should set the current cards in state", () => {
+  		wrapper.setState({currentCards: ['one', 'two']});
+  		wrapper.instance().setCurrentCard();
+  		expect(wrapper.state().currentCard).toEqual('one');
+  	});
+  	 it("should set level to empty string if current cards empty", () => {
+  		wrapper.setState({
+  			currentCards: [],
+  			level: 'Beginner'
+  		});
+  		expect(wrapper.state().level).toEqual('Beginner');
+  		wrapper.instance().setCurrentCard();
+  		expect(wrapper.state().level).toEqual('');
+  	});
+  });
+
+  describe("Set Wrong Cards Method", () => {
+		it("should invoke set wrong cards if level equals practice", () => {
+			const mockSetWrongCards = jest.fn();
+			wrapper.setState({
+				incorrectCards: ['one', 'two']
+			});
+			wrapper.instance().setWrongCards();
+			expect(wrapper.state().currentCard).toEqual('one');
+		});
+		it("should invoke set wrong cards if level equals practice", () => {
+			wrapper.setState({
+				incorrectCards: ['one', 'two']
+			});
+			wrapper.instance().setWrongCards();
+			expect(wrapper.state().level).toEqual('Practice');
+		})
+  });
+
+  describe("Set Current Cards Method", () => {
+  	it("should return current cards that match the level", () => {
+  		let allCards = [{level: 'Beginner'}, {level: 'Advanced'}];
+  		wrapper.instance().setCurrentCards(allCards, 'Beginner');
+  		expect(wrapper.state().currentCards).toEqual([{level: 'Beginner'}]);
+  	});
+  });
+
+  describe("Set Level Method", () => {
+  	it("should set state level", () => {
+  		wrapper.setState({currentCards: ['one', 'two']})
+  		expect(wrapper.state().level).toEqual('');
+  		wrapper.instance().setLevel('Beginner');
+  		expect(wrapper.state().level).toEqual('Beginner');
+  	});
+  });
 });
 
 
