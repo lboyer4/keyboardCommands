@@ -97,8 +97,10 @@ class App extends Component {
 
   returnStartPage = () => {
     this.setState({
-      level: ''
+      level: '',
+      currentCards: []
     });
+    this.setLocalStorage()
   }
 
   render() {

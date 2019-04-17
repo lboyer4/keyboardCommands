@@ -5,9 +5,14 @@ exports[`Card should match snapshot 1`] = `
   className="card"
 >
   <form>
-    <h4>
+    <h5
+      className="basic"
+    >
+      Enter the command for:
+    </h5>
+    <h3>
       Save
-    </h4>
+    </h3>
     <input
       className="answer"
       placeholder="input answer here..."

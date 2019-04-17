@@ -1,7 +1,6 @@
 ### Description
 
-This project is built to give the user a way to practice keyboard shortcut commands by being prompeted with flashcards.
-The incorrect cards are then saved to local storage for the user to practice at a later time. 
+This project is built to give the user a fun way to practice keyboard shortcut commands by being prompeted with flashcards. Any incorrect cards are saved to local storage for the user to practice at a later time. 
 
 ### Installation
 
@@ -18,6 +17,6 @@ next, `run npm install`
 
 ### Learning Goals
 
-The main goal of this project was to create a functioning flashcard app using React and TDD.
+The major goal of this project was to practice using  fecth API, ReactJS, JSX, and SCSS technologies to make an interactive app.
 
-Other learning goals included writing DRY code, using local stroage, and fetching an API
+Other goals included, saving cards to local storage, writing DRY code, and practicing testing.

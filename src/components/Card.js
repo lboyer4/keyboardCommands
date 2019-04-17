@@ -5,8 +5,7 @@ class Card extends Component {
 	constructor() {
 		super()
 		this.state = {
-			answered: false,
-			// nextCard: false,
+			answered: false, 
 		}
 	}
 
@@ -28,14 +27,16 @@ class Card extends Component {
 	}
 
   render() {
-  	let correctAnswer = this.state.answered && <h5>{this.props.command}</h5>
+  	let correctAnswer = this.state.answered && <h5 className="basic">The correct answer is: {this.props.command}</h5>
   	let submitAnswerBtn = <button className="answer-btn" onClick={this.handleAnswer}>Submit Answer</button>
-  	let nextCard = <button className="next" onClick={this.handleNextCard}>Next Card</button>
-  	let button = this.state.answered ? nextCard : submitAnswerBtn 
+  	let nextCard = <button className="next" onClick={this.handleNextCard}>NEXT CARD</button>
+  	let button = this.state.answered ? nextCard : submitAnswerBtn;
     return (
     	<article className="card">
     		<form>
-	    		<h4>{this.props.task}</h4>
+	    		<h5 className="basic">Enter the command for:</h5>
+	    		<h3>{this.props.task}</h3>
+	    		
 	    		<input className="answer" type="text" placeholder="input answer here..." />
 	    		{correctAnswer}
 	    		{button}
