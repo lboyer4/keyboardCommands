@@ -1,3 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardHolder should match snap shot 1`] = `undefined`;
+exports[`CardHolder should match snap shot 1`] = `
+<section
+  className="card-holder"
+>
+  <img
+    alt="magical rainbow"
+    className="rainbow"
+    src="rainbow.png"
+  />
+  <div
+    className="cards"
+  >
+    <h4>
+       Level: 
+       
+    </h4>
+    <h5
+      className="instructions"
+    >
+      To Play, enter a command in the input field, and then click "submit answer".
+    </h5>
+    <h5>
+       Check your answer and then click "next card".
+    </h5>
+    <p
+      className="example"
+    >
+       Example answer: "command Z"
+    </p>
+    <Card
+      command="command P"
+      level="Beginner"
+      setCurrentCard={[MockFunction]}
+      setIncorrectStack={[MockFunction]}
+      task="Paste"
+      updateScore={[MockFunction]}
+    />
+  </div>
+</section>
+`;
