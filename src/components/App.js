@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../SCSS/_App.scss';
 import StartHolder from './StartHolder.js';
 import Cloud from '../images/Cloud-One.png';
-// import keyCommands from '../key-command-data.js';
 import CardHolder from './CardHolder.js';
 import Directory from './Directory.js';
 
@@ -26,7 +25,6 @@ class App extends Component {
     fetch('https://fe-apps.herokuapp.com/api/v1/memoize/1901/lboyer-data/keyCommands')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.setState({
           allCards: data.keyCommands
         })
@@ -40,10 +38,9 @@ class App extends Component {
     this.setCurrentCard() 
   }
 
-  setCurrentCards = (allCards, selectedLevel) => {
-    let all = allCards
-    return all.filter((card) => {
-      if(card['level'] === selectedLevel) {
+  setCurrentCards = (allCards, selectedLevel) => {  
+    allCards.forEach((card) => {
+      if(card.level === selectedLevel) {
         this.state.currentCards.push(card);
       }
     });
@@ -62,7 +59,7 @@ class App extends Component {
     if (this.state.level === 'Practice' && this.state.incorrectCards.length) {
       this.setWrongCards();
     } else {
-      this.setState({currentCard: this.state.currentCards.shift()}) 
+      this.setState({currentCard: this.state.currentCards.shift()});
       if (!this.state.currentCards.length) {
         this.setState({level: ''});
       } 
@@ -79,8 +76,7 @@ class App extends Component {
   }
 
   setIncorrectStack = () => {
-    let wrongAnswers = this.state.incorrectCards;
-    wrongAnswers.push(this.state.currentCard);
+    this.state.incorrectCards.push(this.state.currentCard);
   }
 
   updateScore = () => {
@@ -106,7 +102,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.allCards)
     let startGame = <StartHolder 
       setLevel={this.setLevel}
       setWrongCards={this.setWrongCards}
