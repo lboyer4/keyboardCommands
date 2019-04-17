@@ -41,7 +41,7 @@ h5 {
 
 .answer-btn:hover,
 .next:hover {
-	background-image: linear-gradient(red, yellow, green, blue, purple);
+	background-image: $rainbow-colors;
 	color: $light-color;
 	border: 0;
 }
