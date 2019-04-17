@@ -8,6 +8,10 @@ describe("Start", () => {
 
 	const mocksetWrongCards = jest.fn();
 	const mocksetLevel = jest.fn();
+	const mockPreventDefault = jest.fn();
+	const mockEvent = {
+    preventDefault: mockPreventDefault
+  };
 
 	beforeEach(() => {
 		wrapper = shallow(
@@ -26,5 +30,11 @@ describe("Start", () => {
 	 it('set the wrong cards when clicked', () => {
 	 	wrapper.find('.wrong-cards-btn').simulate('click');
 	 	expect(mocksetWrongCards).toBeCalled();
-	 })
+	 });
+
+	// 	it('should call setLevel', () => {
+	// 	wrapper.instance().handleSubmit(mockEvent);
+	// 	expect(mockPreventDefault).toHaveBeenCalled()
+	// 	expect(mocksetLevel).toHaveBeenCalled()
+	// });
 });

@@ -11,10 +11,9 @@ describe("Card", () => {
 	const mocksetWrongCards = jest.fn();
 	const mocksetCurrentCard = jest.fn()
 	const mockPreventDefault = jest.fn();
-	 const mockEvent = {
+	const mockEvent = {
     preventDefault: mockPreventDefault
   };
-	// const mockSetCurrentCard = jest.fn();
 
 	beforeEach(() => {
 		wrapper = shallow(
@@ -34,13 +33,10 @@ describe("Card", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	// it('should change answered state to true', () => {
+	// it('should change answered from false to true', () => {
+	// 	wrapper.setState({answered:false})
 	// 	wrapper.instance().handleAnswer(mockEvent);
 	// 	expect(mockPreventDefault).toHaveBeenCalled()
-	// });
-	// it('should compare answers when clicked', () => {
-	// 	wrapper.state().answered=false;
-	// 	wrapper.find('.answer-btn').simulate('click');
 	// 	expect(wrapper.state().answered).toEqual(true);
 	// });
 
@@ -51,26 +47,10 @@ describe("Card", () => {
 		expect(wrapper.state().answered).toEqual(false)
 	});
 
-		it('should change answered state to false', () => {
+		it('should call set current card', () => {
 		wrapper.setState({answered: true})
 		wrapper.instance().handleNextCard(mockEvent);
 		expect(mockPreventDefault).toHaveBeenCalled()
 		expect(mocksetCurrentCard).toHaveBeenCalled()
 	});
-	// it('should call updateScores on submit', () => {
- //    wrapper.find('.answer-btn').simulate('click', { preventDefault: () => {}
- //  });
- //  //   const wrapperTwo = mount(<Card />);
-	// 	// expect(wrapperTwo.find('.answer').parents()).toEqual('command');
- //    expect(mockUpdateScore).toBeCalled();
- //  });	
-
-	 // it('should return answered to false when called', () => {
-
-  // });
-
-	 // it('set the wrong cards when clicked', () => {
-	 // 	wrapper.find('.wrong-cards-btn').simulate('click');
-	 // 	expect(mocksetWrongCards).toBeCalled();
-	 // })
 });
